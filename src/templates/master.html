@@ -6,6 +6,9 @@
 	<title>{{ title }}</title>
 	{% block style -%}
 		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="./assets/css/style.css">
 	{%- endblock %}
 </head>
@@ -14,21 +17,24 @@
 		{% block header -%}
 			{% include "templates/header.html" -%}
 		{%- endblock %}
-		{% block main %}
-			<div class="container">
+		{% block main -%}
+			<section class="main-wrapper">
 				<main class="content">
 					{% block content -%}{%- endblock %}
 				</main>
-				{% block sidebar %}
+				{% block sidebar -%}
 					{% include "templates/sidebar.html" %}
-				{% endblock %}
-			</div>
-		{% endblock %}
+				{%- endblock %}
+			</section>
+		{%- endblock %}
 		{% block footer -%}
 			{% include "templates/footer.html" -%}
 		{%- endblock %}
 	{%- endblock %}
 	{% block scripts -%}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+		<script src="./assets/js/script-min.js"></script>
 	{%- endblock %}
 </body>
 </html>

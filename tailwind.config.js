@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#44ACD3',
-        secondary: '#E18941'
+        secondary: '#FFA630'
       },
       maxWidth: {
         container: '1096px'

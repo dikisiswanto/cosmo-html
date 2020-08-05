@@ -1,3 +1,5 @@
+/*! new cosmo style | MIT License | 2020 - Diki Siswanto */
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -608,18 +610,24 @@ video {
   }
 }
 
+.--mt-2 {
+  margin-top: 0.5rem;
+}
+
 .header {
+  position: -webkit-sticky;
+  position: sticky;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
   transition-property: all;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .header--sticky {
-  position: -webkit-sticky;
-  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .header--sticky .header-brand {
@@ -627,8 +635,6 @@ video {
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  transition-property: all;
-  transition-duration: 300ms;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -638,19 +644,15 @@ video {
   height: auto;
   margin-right: 0.75rem;
   margin-left: 0;
-  transition-property: all;
-  transition-duration: 300ms;
 }
 
 .header--sticky .header-brand__title {
   padding-top: 0.25rem;
-  font-size: 1rem;
-  transition-property: all;
-  transition-duration: 300ms;
+  font-size: 1.125rem;
   font-weight: 600;
   --text-opacity: 1;
-  color: #4a5568;
-  color: rgba(74, 85, 104, var(--text-opacity));
+  color: #44ACD3;
+  color: rgba(68, 172, 211, var(--text-opacity));
 }
 
 .header--sticky .header-brand__subtitle {
@@ -664,7 +666,6 @@ video {
 .header--sticky .nav__link {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 0.875rem;
 }
 
 .header-brand {
@@ -674,6 +675,8 @@ video {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  transition-property: all;
+  transition-duration: 500ms;
 }
 
 .header-brand__logo {
@@ -681,6 +684,8 @@ video {
   width: auto;
   margin-left: auto;
   margin-right: auto;
+  transition-property: all;
+  transition-duration: 500ms;
 }
 
 .header-brand__title {
@@ -688,6 +693,8 @@ video {
   padding-bottom: 0;
   font-size: 1.5rem;
   font-weight: 600;
+  transition-property: all;
+  transition-duration: 500ms;
 }
 
 .nav {
@@ -697,6 +704,8 @@ video {
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
+  transition-property: all;
+  transition-duration: 300ms;
 }
 
 .nav__list {
@@ -707,12 +716,14 @@ video {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  transition-property: all;
+  transition-duration: 300ms;
 }
 
 .nav__item--active {
   --bg-opacity: 1;
-  background-color: #E18941;
-  background-color: rgba(225, 137, 65, var(--bg-opacity));
+  background-color: #FFA630;
+  background-color: rgba(255, 166, 48, var(--bg-opacity));
 }
 
 .nav__link {
@@ -721,14 +732,144 @@ video {
   padding-bottom: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property: all;
   transition-duration: 300ms;
 }
 
 .nav__link:hover {
   --bg-opacity: 1;
-  background-color: #E18941;
-  background-color: rgba(225, 137, 65, var(--bg-opacity));
+  background-color: #FFA630;
+  background-color: rgba(255, 166, 48, var(--bg-opacity));
+}
+
+.content {
+  width: 66.666667%;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-right: 0.5rem;
+  padding: 1rem;
+}
+
+.content__heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.sidebar {
+  width: 33.333333%;
+  margin-left: 0.5rem;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-radius: 0.125rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  height: 12rem;
+  margin-right: 0.5rem;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__list {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.slider__item {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  position: relative;
+}
+
+.slider__item:focus,
+		.slider__item:active {
+  outline: 0;
+}
+
+.slider__item--original {
+  height: 25rem;
+}
+
+.slider__item--thumbnail {
+  min-height: 5rem;
+  max-height: 6rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  opacity: 0.5;
+}
+
+.slider__item--thumbnail.slick-current {
+  opacity: 1;
+}
+
+.slider__caption {
+  min-height: 4rem;
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  --bg-opacity: 1;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, var(--bg-opacity));
+  --bg-opacity: 0.25;
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.slider__image {
+  height: inherit;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider__arrow {
+  top: calc(50% - 5.5rem);
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  font-weight: 400;
+  font-size: 1rem;
+  --text-opacity: 1;
+  color: #44ACD3;
+  color: rgba(68, 172, 211, var(--text-opacity));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__arrow--left {
+  left: .5rem;
+}
+
+.slider__arrow--right {
+  right: .5rem;
+}
+
+.slider__arrow:focus, .slider__arrow:active {
+  outline: 0;
 }
 
 body {
@@ -740,4 +881,13 @@ body {
   --bg-opacity: 1;
   background-color: #edf2f7;
   background-color: rgba(237, 242, 247, var(--bg-opacity));
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1096px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.25rem;
 }

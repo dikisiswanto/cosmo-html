@@ -1,6 +1,36 @@
-{% set title = 'My title' -%}
+{% set title = 'Home' -%}
 {% extends "templates/master.html" -%}
 
+{% set sliderImages = [
+	'sedang_8UYMsv_desa4.jpg',
+	'sedang_OiUlp7_desa5.jpg',
+	'sedang_8UYMsv_desa4.jpg',
+	'sedang_OiUlp7_desa5.jpg',
+	'sedang_8UYMsv_desa4.jpg'
+] -%}
 {% block content -%}
-	
+	<section class="slider">
+		<ul class="slider__list slick-featured">
+			{% for image in sliderImages %}
+				<li class="slider__item slider__item--original">
+					<img src="https://preview.silirdev.com/desa/upload/galeri/{{ image }}" alt="" class="slider__image">
+					<div class="slider__caption">
+						<figcaption>{{ ['Lorem ipsum dolor sit, amet consectetur adipisicing elit.', 'Corporis architecto ad nihil expedita earum provident, aliquam aperiam saepe dolore!', 'Magnam assumenda dignissimos? Consequuntur, laboriosam nam.', 'Hello world'] | random }}</figcaption>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+		<ul class="slider__list slick-thumbnail">
+			{% for image in sliderImages %}
+				<li class="slider__item slider__item--thumbnail">
+					<img src="https://preview.silirdev.com/desa/upload/galeri/{{ image }}" alt="" class="slider__image">
+				</li>
+			{% endfor %}
+		</ul>
+		<button class="slider__arrow slider__arrow--left"><i class="fa fa-chevron-left"></i></button>
+		<button class="slider__arrow slider__arrow--right"><i class="fa fa-chevron-right"></i></button>
+	</section>
+	<section class="content-list">
+		<h3 class="content__heading"><i class="fa fa-newspaper-o"></i> Berita terbaru</h3>
+	</section>
 {%- endblock %}

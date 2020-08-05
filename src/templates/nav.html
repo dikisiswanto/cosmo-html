@@ -50,8 +50,8 @@
 ] -%}
 <nav class="nav">
 	<ul class="nav__list">
-		{% for menu in menus %}
+		{% for menu in menus -%}
 			<li class="nav__item {{ "nav__item--active" if menu.isActive }}"><a href="" class="nav__link">{{ menu.name }}</a></li>
-		{% endfor %}
+		{%- endfor %}
 	</ul>
 </nav>

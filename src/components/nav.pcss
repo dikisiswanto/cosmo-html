@@ -1,8 +1,8 @@
 .nav {
-	@apply bg-primary text-white;
+	@apply bg-primary text-white transition-all duration-300;
 
 	&__list {
-		@apply max-w-container mx-auto flex flex-wrap items-center justify-center;
+		@apply max-w-container mx-auto flex flex-wrap items-center justify-center transition-all duration-300;
 	}
 
 	&__item {
@@ -12,8 +12,8 @@
 	}
 
 	&__link {
-		@apply inline-block py-3 px-4 transition duration-300;
-
+		@apply inline-block py-3 px-4 transition-all duration-300;
+		
 		&:hover {
 			@apply bg-secondary;
 		}

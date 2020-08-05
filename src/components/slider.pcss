@@ -1,0 +1,58 @@
+.slider {
+	@apply relative;
+	
+	&__list {
+		@apply mb-2 relative;
+	}
+
+	&__item {
+		@apply w-full object-cover cursor-pointer relative;
+
+		&:focus,
+		&:active {
+			@apply outline-none;
+		}
+
+		&--original {
+			height: 25rem;
+		}
+
+		&--thumbnail {
+			min-height: 5rem;
+			max-height: 6rem;
+			@apply px-1 opacity-50;
+
+			&.slick-current {
+				@apply opacity-100;
+			}
+		}
+	}
+
+	&__caption {
+		min-height: 4rem;
+		@apply w-full py-3 px-4 absolute left-0 right-0 bottom-0 bg-black bg-opacity-25 text-white flex items-center font-semibold;
+	}
+
+	&__image {
+		height: inherit;
+		@apply w-full object-cover;
+	}
+
+	&__arrow {
+		top: calc(50% - 5.5rem);
+		@apply absolute w-10 h-10 bg-white shadow-lg rounded-full font-normal text-base text-primary inline-flex items-center justify-center;
+
+		&--left {
+			left: .5rem;
+		}
+
+		&--right {
+			right: .5rem;
+		}
+
+		&:focus, &:active {
+			@apply outline-none;
+		}
+	}
+
+}
