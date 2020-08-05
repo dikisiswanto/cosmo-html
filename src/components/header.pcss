@@ -1,0 +1,44 @@
+.header {
+	@apply shadow-md bg-white transition-all duration-300;
+
+	&--sticky {
+		@apply sticky;
+
+		.header-brand {
+			@apply flex items-center justify-start text-left transition-all duration-300 py-2;
+
+			&__logo {
+				@apply w-8 h-auto mr-3 ml-0 transition-all duration-300;
+			}
+
+			&__title {
+				@apply pt-1 text-base transition-all duration-300 font-semibold text-gray-700;
+			}
+
+			&__subtitle {
+				@apply hidden;
+			}
+		}
+
+		.nav {
+			&__list {
+				@apply justify-start;
+			}
+			&__link {
+				@apply py-2 text-sm;
+			}
+		}
+	}
+}
+
+.header-brand {
+	@apply mx-auto max-w-container text-center py-4;
+
+	&__logo {
+		@apply h-16 w-auto mx-auto;
+	}
+
+	&__title {
+		@apply pt-2 pb-0 text-2xl font-semibold;
+	}
+}

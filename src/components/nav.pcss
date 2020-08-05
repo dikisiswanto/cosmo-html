@@ -1,0 +1,21 @@
+.nav {
+	@apply bg-primary text-white;
+
+	&__list {
+		@apply max-w-container mx-auto flex flex-wrap items-center justify-center;
+	}
+
+	&__item {
+		&--active {
+			@apply bg-secondary;
+		}
+	}
+
+	&__link {
+		@apply inline-block py-3 px-4 transition duration-300;
+
+		&:hover {
+			@apply bg-secondary;
+		}
+	}
+}

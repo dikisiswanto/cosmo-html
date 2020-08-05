@@ -1,0 +1,57 @@
+{% set menus = [
+	{
+		name: 'Home',
+		hasChildren: false,
+		isActive: true,
+		submenus: []
+	},
+	{
+		name: 'Profil Desa',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	},
+	{
+		name: 'Sarana dan Prasarana',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	},
+	{
+		name: 'Peta Desa',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	},
+	{
+		name: 'Informasi Publik',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	},
+	{
+		name: 'Produk Hukum',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	},
+	{
+		name: 'Berita',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	},
+	{
+		name: 'Kontak',
+		hasChildren: false,
+		isActive: false,
+		submenus: []
+	}
+] -%}
+<nav class="nav">
+	<ul class="nav__list">
+		{% for menu in menus %}
+			<li class="nav__item {{ "nav__item--active" if menu.isActive }}"><a href="" class="nav__link">{{ menu.name }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>

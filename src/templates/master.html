@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }}</title>
+	{% block style -%}
+		<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./assets/css/style.css">
+	{%- endblock %}
+</head>
+<body>
+	{% block body -%}
+		{% block header -%}
+			{% include "templates/header.html" -%}
+		{%- endblock %}
+		{% block main %}
+			<div class="container">
+				<main class="content">
+					{% block content -%}{%- endblock %}
+				</main>
+				{% block sidebar %}
+					{% include "templates/sidebar.html" %}
+				{% endblock %}
+			</div>
+		{% endblock %}
+		{% block footer -%}
+			{% include "templates/footer.html" -%}
+		{%- endblock %}
+	{%- endblock %}
+	{% block scripts -%}
+	{%- endblock %}
+</body>
+</html>
