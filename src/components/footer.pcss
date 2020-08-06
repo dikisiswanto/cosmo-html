@@ -1,0 +1,15 @@
+.footer {
+	@apply py-3 bg-white mt-6 shadow-lg;
+
+	&__content {
+		@apply flex flex-col items-center max-w-container mx-auto text-sm;
+
+		@screen lg {
+			@apply flex-row justify-between;
+		}
+	}
+
+	&__copyright {
+		@apply text-left;
+	}
+}

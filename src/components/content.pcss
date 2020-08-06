@@ -1,7 +1,82 @@
 .content {
-	@apply w-8/12 bg-white rounded shadow-sm mr-2 p-4;
+	@apply w-full bg-white rounded shadow-sm p-3;
+
+	@screen lg {
+		@apply w-8/12 p-4 mr-2;
+	}
 
 	&__heading {
-		@apply text-lg font-bold pt-5 pb-4;
+		@apply text-xl font-bold pt-5 pb-4;
+	}
+
+	&__list {
+		@apply flex flex-col;
+	}
+
+	&__item {
+		@apply flex flex-col justify-between pb-4;
+
+		@screen md {
+			@apply flex-row;
+		}
+
+		&+& {
+			@apply border-t border-gray-300 pt-4;
+		}
+	}
+
+	&__thumbnail {
+		@apply w-full object-cover;
+
+		@screen md {
+			width: 30%;
+			@apply h-40;
+		}
+	}
+
+	&__caption {
+		@apply mt-3;
+
+		@screen md {
+			width: 70%;
+			@apply ml-3 mt-0;
+		}
+
+		@screen lg {
+			@apply ml-4;
+		}
+
+	}
+
+	&__image {
+		@apply w-full object-cover;
+
+		@screen md {
+			height: inherit;
+		}
+	}
+
+	&__title {
+		@apply font-semibold text-lg;
+	}
+
+	&__meta {
+		@apply text-xs flex pt-1 flex-wrap;
+
+		&__item {
+			@apply inline-block mr-3;
+		}
+	}
+
+	&__description {
+		@apply text-sm text-gray-600 py-2;
+	}
+
+	&__link {
+		@apply transition duration-300;
+
+		&:hover {
+			@apply text-primary;
+		}
 	}
 }

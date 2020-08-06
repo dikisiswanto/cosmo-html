@@ -6,14 +6,45 @@
 	}
 
 	&__item {
+		@apply relative;
+
 		&--active {
 			@apply bg-secondary;
+		}
+
+		&--has-dropdown {
+			&:hover {
+				.nav-dropdown {
+					@apply scale-y-100 visible z-50;
+				}
+			}
 		}
 	}
 
 	&__link {
 		@apply inline-block py-3 px-4 transition-all duration-300;
-		
+
+		&:hover {
+			@apply bg-secondary;
+		}
+	}
+
+	&__icon {
+		@apply text-xs font-normal ml-2;
+	}
+}
+
+.nav-dropdown {
+	top: 100%;
+	@apply absolute left-0 bg-primary z-0 invisible transform origin-top scale-x-100 scale-y-0 transition-all duration-300 shadow-lg text-white border-t-2 border-white w-64;
+
+	&__item {
+		@apply relative z-50;
+	}
+
+	&__link {
+		@apply block py-2 px-3;
+
 		&:hover {
 			@apply bg-secondary;
 		}

@@ -1,0 +1,40 @@
+{% set socials = [
+	{
+		name: 'facebook',
+		icon: 'facebook'
+	},
+	{
+		name: 'twitter',
+		icon: 'twitter'
+	},
+	{
+		name: 'instagram',
+		icon: 'instagram'
+	},
+	{
+		name: 'telegram',
+		icon: 'send'
+	},
+	{
+		name: 'whatsapp',
+		icon: 'whatsapp'
+	},
+	{
+		name: 'youtube',
+		icon: 'youtube-play'
+	}
+] -%}
+<footer class="footer">
+	<div class="footer__content">
+		<div class="footer__copyright">
+			<span>Copyright &copy; 2020 - cosmo v2-alpha</span>
+		</div>
+		<ul class="social-media">
+			{% for social in socials -%}	
+				<li class="social-media__item social-media--{{ social.name }}">
+					<a href="#" class="social-media__link"><i class="fa fa-{{ social.icon }}"></i></a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+</footer>

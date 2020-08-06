@@ -19,6 +19,12 @@ $(document).ready(function () {
     arrows: false,
     focusOnSelect: true
   });
+  $('.newsticker__list').marquee({
+    duration: 5000,
+    gap: 50,
+    pauseOnHover: true,
+    speed: 150
+  });
   $(window).scroll(function () {
     var headerHeight = $('.header').height() - 75;
 

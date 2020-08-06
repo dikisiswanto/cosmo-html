@@ -7,7 +7,7 @@ module.exports = {
         secondary: '#FFA630'
       },
       maxWidth: {
-        container: '1096px'
+        container: '1200px'
       }
     },
     fontFamily: {

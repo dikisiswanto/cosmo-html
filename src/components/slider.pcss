@@ -1,6 +1,6 @@
 .slider {
 	@apply relative;
-	
+
 	&__list {
 		@apply mb-2 relative;
 	}
@@ -14,12 +14,20 @@
 		}
 
 		&--original {
-			height: 25rem;
+			height: 15rem;
+
+			@screen md {
+				height: 20rem;
+			}
+
+			@screen lg {
+				height: 25rem;
+			}
 		}
 
 		&--thumbnail {
-			min-height: 5rem;
-			max-height: 6rem;
+			min-height: 6rem;
+			max-height: 7rem;
 			@apply px-1 opacity-50;
 
 			&.slick-current {
@@ -50,7 +58,8 @@
 			right: .5rem;
 		}
 
-		&:focus, &:active {
+		&:focus,
+		&:active {
 			@apply outline-none;
 		}
 	}

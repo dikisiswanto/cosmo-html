@@ -4,7 +4,10 @@
 @import './utilities/spacing.pcss';
 @import './components/header.pcss';
 @import './components/nav.pcss';
+@import './components/newsticker.pcss';
+@import './components/social-media.pcss';
 @import './components/content.pcss';
+@import './components/pagination.pcss';
 @import './components/sidebar.pcss';
 @import './components/slider.pcss';
 @import './components/footer.pcss';
@@ -14,5 +17,13 @@ body {
 }
 
 .main-wrapper {
-	@apply flex justify-between max-w-container mx-auto mt-5;
+	@apply flex justify-between max-w-container mx-auto mt-4;
+}
+
+::-moz-selection {
+  @apply text-white bg-primary;
+}
+
+::selection {
+	@apply text-white bg-primary;
 }

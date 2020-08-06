@@ -1,15 +1,13 @@
 {% set menus = [
 	{
-		name: 'Home',
-		hasChildren: false,
-		isActive: true,
-		submenus: []
-	},
-	{
-		name: 'Profil Desa',
-		hasChildren: false,
+		name: 'Profil',
+		hasChildren: true,
 		isActive: false,
-		submenus: []
+		submenus: [
+			'Visi Misi',
+			'Gambaran Umum Desa',
+			'Sejarah Desa'
+		]
 	},
 	{
 		name: 'Sarana dan Prasarana',
@@ -50,8 +48,19 @@
 ] -%}
 <nav class="nav">
 	<ul class="nav__list">
+		<li class="nav__item nav__item--active">
+			<a href="" class="nav__link"><i class="fa fa-home"></i></a>
+		</li>
 		{% for menu in menus -%}
-			<li class="nav__item {{ "nav__item--active" if menu.isActive }}"><a href="" class="nav__link">{{ menu.name }}</a></li>
+			<li class="nav__item {{ "nav__item--active" if menu.isActive }} {{ "nav__item--has-dropdown" if menu.hasChildren }}"><a href="" class="nav__link">{{ menu.name }} {% if menu.hasChildren %}<i class="fa fa-chevron-down nav__icon"></i>{% endif %}</a>
+				{% if menu.hasChildren -%}
+					<ul class="nav-dropdown">
+						{% for submenu in menu.submenus -%}
+							<li class="nav-dropdown__item"><a href="" class="nav-dropdown__link">{{ submenu }}</a></li>
+						{%- endfor %}
+					</ul>
+				{%- endif %}
+			</li>
 		{%- endfor %}
 	</ul>
 </nav>

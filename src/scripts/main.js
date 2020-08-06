@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 	//=require ./slider.js
+	//=require ./newsticker.js
 
 	$(window).scroll(function () {
 		const headerHeight = $('.header').height() - 75;
