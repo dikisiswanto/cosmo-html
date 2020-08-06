@@ -2,7 +2,7 @@ $('.slick-featured').slick({
 	infinite: true,
 	slidesToShow: 1,
 	slidesToShow: 1,
-  speed: 500,
+	speed: 500,
 	fade: true,
 	autoplay: true,
 	asNavFor: '.slick-thumbnail',
@@ -10,8 +10,8 @@ $('.slick-featured').slick({
 	nextArrow: $('.slider__arrow--right')
 });
 
-const chilElems = $('.slick-thumbnail').children().length;
-let slidesToShow = (chilElems - 1) < 5 ? (chilElems - 1) : 5;
+const childElems = $('.slick-thumbnail').children().length;
+let slidesToShow = (childElems - 1) < 5 ? (childElems - 1) : 5;
 
 $('.slick-thumbnail').slick({
 	infinite: true,
