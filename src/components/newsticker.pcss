@@ -1,0 +1,27 @@
+.newsticker {
+	@apply max-w-container mx-3 mt-4 bg-white shadow-sm rounded-md overflow-hidden relative py-2;
+
+	@screen md {
+		@apply mx-auto;
+	}
+
+	&__label {
+		@apply absolute top-0 left-0 right-0 py-2 px-2 w-10 bg-gray-500 text-center text-white z-10;
+
+		@screen md {
+			@apply w-20 px-4;
+		}
+
+		span {
+			@apply hidden;
+
+			@screen md {
+				@apply inline-flex;
+			}
+		}
+	}
+
+	&__list {
+		@apply px-2;
+	}
+}
