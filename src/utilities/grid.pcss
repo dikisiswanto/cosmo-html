@@ -10,10 +10,12 @@
 	}
 
 	@screen lg {
-		max-width: theme('screens.lg');
+		@apply max-w-container;
 	}
+}
 
-	@screen xl {
-		max-width: theme('screens.xl');
+.column {
+	&.--w-one-third {
+		@apply w-1/3;
 	}
 }

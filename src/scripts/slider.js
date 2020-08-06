@@ -1,7 +1,6 @@
 $('.slick-featured').slick({
 	infinite: true,
 	slidesToShow: 1,
-	slidesToShow: 1,
 	speed: 500,
 	fade: true,
 	autoplay: true,

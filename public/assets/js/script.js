@@ -1,14 +1,16 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 $(document).ready(function () {
-  var _$$slick;
-
-  $('.slick-featured').slick((_$$slick = {
+  $('.slick-featured').slick({
     infinite: true,
-    slidesToShow: 1
-  }, _defineProperty(_$$slick, "slidesToShow", 1), _defineProperty(_$$slick, "speed", 500), _defineProperty(_$$slick, "fade", true), _defineProperty(_$$slick, "autoplay", true), _defineProperty(_$$slick, "asNavFor", '.slick-thumbnail'), _defineProperty(_$$slick, "prevArrow", $('.slider__arrow--left')), _defineProperty(_$$slick, "nextArrow", $('.slider__arrow--right')), _$$slick));
+    slidesToShow: 1,
+    speed: 500,
+    fade: true,
+    autoplay: true,
+    asNavFor: '.slick-thumbnail',
+    prevArrow: $('.slider__arrow--left'),
+    nextArrow: $('.slider__arrow--right')
+  });
   var childElems = $('.slick-thumbnail').children().length;
   var slidesToShow = childElems - 1 < 5 ? childElems - 1 : 5;
   $('.slick-thumbnail').slick({
