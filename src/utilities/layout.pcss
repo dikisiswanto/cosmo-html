@@ -1,5 +1,13 @@
 .--flex {
 	@apply flex;
+
+	&-lg-only {
+		@apply flex-col;
+
+		@screen lg {
+			@apply flex-row;
+		}
+	}
 }
 
 .--justify-between {

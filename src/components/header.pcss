@@ -37,13 +37,29 @@
 }
 
 .header-brand {
-	@apply block mx-auto max-w-container text-center py-4 transition-all duration-500;
+	@apply block mx-auto max-w-container text-center py-4 px-3 transition-all duration-500;
 
 	&__logo {
 		@apply h-16 w-auto mx-auto transition-all duration-500;
 	}
 
 	&__title {
-		@apply pt-2 pb-0 text-2xl font-semibold transition-all duration-500;
+		@apply pt-2 pb-0 text-lg font-semibold transition-all duration-500;
+
+		@screen md {
+			@apply text-xl;
+		}
+
+		@screen lg {
+			@apply text-2xl;
+		}
+	}
+
+	&__subtitle {
+		@apply text-sm;
+
+		@screen md {
+			@apply text-base;
+		}
 	}
 }

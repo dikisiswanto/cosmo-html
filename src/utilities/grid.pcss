@@ -15,7 +15,9 @@
 }
 
 .column {
-	&.--w-one-third {
-		@apply w-1/3;
+	@apply max-w-full;
+
+	@screen lg {
+		@apply w-full;
 	}
 }
