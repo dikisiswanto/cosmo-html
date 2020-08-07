@@ -3,9 +3,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // primary: '#44ACD3',
         primary: '#2E86AB',
-        // secondary: '#FFA630'
         secondary: '#F18F01',
         tertiary: '#68618F'
       },
@@ -14,7 +12,8 @@ module.exports = {
       }
     },
     fontFamily: {
-      primary: ['Hind', 'sans-serif']
+      primary: ['Hind', 'sans-serif'],
+      heading: ['Roboto Slab', 'serif']
     }
   },
   variants: {},

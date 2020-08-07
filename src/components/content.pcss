@@ -6,7 +6,15 @@
 	}
 
 	&__heading {
-		@apply text-xl font-bold pt-5 pb-4;
+		@apply text-lg font-bold font-heading;
+
+		@screen md {
+			@apply text-xl;
+		}
+
+		@screen lg {
+			@apply text-2xl;
+		}
 	}
 
 	&__list {
@@ -57,19 +65,40 @@
 	}
 
 	&__title {
-		@apply font-semibold text-lg;
+		@apply font-semibold font-heading;
+
+		@screen md {
+			@apply text-lg;
+		}
+
+		@screen lg {
+			@apply text-xl;
+		}
 	}
 
 	&__meta {
 		@apply text-xs flex pt-1 flex-wrap;
 
+		@screen md {
+			@apply text-sm;
+		}
+
 		&__item {
-			@apply inline-block mr-3;
+			@apply inline-block mr-3 text-gray-600;
+		}
+
+		&__icon {
+			@apply text-secondary mr-1;
 		}
 	}
 
 	&__description {
-		@apply text-sm text-gray-600 py-2;
+		@apply text-gray-600 py-2 text-sm;
+
+		@screen md {
+			@apply text-base;
+		}
+
 	}
 
 	&__link {

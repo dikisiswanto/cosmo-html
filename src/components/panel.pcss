@@ -2,13 +2,21 @@
 	@apply rounded shadow bg-white overflow-hidden;
 
 	&--sidebar {
-		
+
 		.panel__header {
 			@apply text-primary pt-3 pb-2 px-4;
 		}
 
 		.panel__heading {
-			@apply text-xl uppercase font-bold;
+			@apply text-base capitalize font-bold;
+
+			@screen md {
+				@apply text-lg;
+			}
+
+			@screen lg {
+				@apply text-xl;
+			}
 		}
 
 		.panel__body {
@@ -16,7 +24,7 @@
 		}
 	}
 
-	& + & {
+	&+& {
 		@apply mt-4;
 	}
 
@@ -26,7 +34,7 @@
 	}
 
 	&__heading {
-		@apply text-lg font-semibold;
+		@apply text-lg font-semibold font-heading;
 	}
 
 	&__body {

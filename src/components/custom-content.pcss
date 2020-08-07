@@ -1,0 +1,104 @@
+.content__article {
+	@apply break-words;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-base font-bold;
+
+		@screen lg {
+			@apply text-lg;
+		}
+	}
+
+	p {
+		@apply py-2;
+	}
+
+	ol,
+	ul {
+		@apply ml-5 my-2;
+
+		li {
+			@apply pb-1;
+		}
+	}
+
+	ol {
+		@apply list-decimal;
+	}
+
+	ul {
+		@apply list-disc;
+	}
+
+	img {
+		@apply w-full shadow my-2;
+	}
+
+	table {
+		@apply border w-full mt-2 mb-3;
+
+		tr,
+		td,
+		th {
+			border: 1px solid theme('colors.gray.400') !important;
+			@apply py-1 px-1;
+		}
+	}
+
+	.table-responsive {
+		@apply overflow-auto;
+
+		table {
+			background-color: transparent !important;
+
+			thead {
+				background: theme('colors.primary') !important;
+				color: theme('colors.white') !important;
+				border: 1px solid theme('colors.primary') !important;
+
+				th {
+					border: 1px solid theme('colors.white') !important;
+				}
+			}
+
+			tr:nth-child(even) {
+				@apply bg-primary text-white bg-opacity-75;
+			}
+
+			tr.highlighted {
+				background-color: theme('colors.gray.700') !important;
+				@apply text-white;
+			}
+		}
+	}
+
+	.container {
+		background-color: transparent !important;
+
+		.progress {
+			background-color: theme('colors.primary') !important;
+			text-align: left !important;
+			@apply relative w-full h-5 shadow rounded-md overflow-hidden my-2;
+		}
+
+		.progress-bar {
+			background-color: theme('colors.secondary') !important;
+			@apply h-full w-0 flex items-center;
+
+			span {
+				color: theme('colors.white') !important;
+				@apply absolute right-0 pr-3 block text-right text-sm transform;
+			}
+		}
+
+	}
+
+	.table {
+		@apply overflow-auto;
+	}
+}

@@ -27,23 +27,27 @@
 	}
 
 	&__title {
-		@apply font-semibold mb-1;
+		@apply font-semibold font-heading mb-1;
 
 		@screen md {
-			@apply text-lg;
+			@apply text-xl;
 		}
 
 		@screen lg {
-			@apply text-xl;
+			@apply text-2xl;
 		}
 	}
 
 	&__description {
-		@apply text-sm py-1;
+		@apply py-1 text-sm;
+
+		@screen md {
+			@apply text-base;
+		}
 	}
 
 	&__button {
-		@apply inline-block rounded-md  bg-secondary px-3 py-2 my-2 transition duration-300;
+		@apply inline-block rounded-md bg-secondary px-3 py-2 my-2 transition duration-300;
 
 		&__icon {
 			@apply text-xs font-thin ml-1;

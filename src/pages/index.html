@@ -64,14 +64,14 @@
 		<div class="headline__caption">
 			<h4 class="headline__title"><a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
 			<p class="headline__description">Eaque itaque inventore dicta animi quis beatae nostrum at, perferendis, ullam assumenda praesentium saepe atque doloribus eius natus minima earum aliquam aperiam saepe dolore...</p>
-			<a href="" class="headline__button">Selengkapnya <i class="fa fa-chevron-right headline__button__icon"></i></a>
+			<a href="./article.html" class="headline__button">Selengkapnya <i class="fa fa-chevron-right headline__button__icon"></i></a>
 		</div>
 		<div class="headline__thumbnail">
 			<img src="http://sukaraya.luwuutarakab.go.id/content/uploads/images/Upacara_Peringatan_Hari_Otonomi_Daerah_XX_(5).jpg" alt="" class="headline__image">
 		</div>
 	</section>
 	<section id="news-list">
-		<h3 class="content__heading"><i class="fa fa-newspaper-o"></i> Berita terbaru</h3>
+		<h3 class="content__heading --mt-5 --mb-4"><i class="fa fa-newspaper-o"></i> Artikel Terkini</h3>
 		<ul class="content__list">
 			{% for news in contents -%}
 				<li class="content__item">
@@ -79,11 +79,11 @@
 						<img src="{{ news.thumbnail }}" alt="" class="content__image">
 					</div>
 					<div class="content__caption">
-						<h4 class="content__title"><a href="" class="content__link">{{ news.title }}</a></h4>
+						<h4 class="content__title"><a href="./article.html" class="content__link">{{ news.title }}</a></h4>
 						<div class="content__meta">
-							<span class="content__meta__item"><i class="fa fa-calendar"></i> {{ news.publishedAt }}</span>
-							<span class="content__meta__item"><i class="fa fa-user"></i> Admin</span>
-							<span class="content__meta__item"><i class="fa fa-tag"></i> <a href="" class="content__link">{{ news.category }}</a></span>
+							<span class="content__meta__item"><i class="fa fa-calendar content__meta__icon"></i> {{ news.publishedAt }}</span>
+							<span class="content__meta__item"><i class="fa fa-user content__meta__icon"></i> Admin</span>
+							<span class="content__meta__item"><i class="fa fa-tag content__meta__icon"></i> <a href="" class="content__link">{{ news.category }}</a></span>
 						</div>
 						<p class="content__description">{{ news.description }}</p>
 					</div>

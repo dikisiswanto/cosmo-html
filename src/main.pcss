@@ -17,9 +17,15 @@
 @import './components/content.pcss';
 @import './components/sidebar.pcss';
 @import './components/footer.pcss';
+@import './components/custom-content.pcss';
+@import './components/custom-sidebar.pcss';
 
 body {
-	@apply font-primary text-base text-gray-700 bg-gray-200;
+	@apply font-primary text-sm text-gray-700 bg-gray-200;
+
+	@screen md {
+		@apply text-base;
+	}
 }
 
 .main-wrapper {
@@ -31,9 +37,9 @@ body {
 }
 
 ::-moz-selection {
-	@apply text-white bg-primary;
+	@apply text-white bg-secondary;
 }
 
 ::selection {
-	@apply text-white bg-primary;
+	@apply text-white bg-secondary;
 }
