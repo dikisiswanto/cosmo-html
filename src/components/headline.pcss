@@ -6,7 +6,7 @@
 	}
 
 	&__caption {
-		@apply w-full py-4 px-4 bg-secondary text-white;
+		@apply w-full py-5 px-4 bg-primary text-white;
 
 		@screen md {
 			@apply w-7/12;
@@ -39,6 +39,18 @@
 	}
 
 	&__description {
-		@apply text-sm;
+		@apply text-sm py-1;
+	}
+
+	&__button {
+		@apply inline-block rounded-md  bg-secondary px-3 py-2 my-2 transition duration-300;
+
+		&__icon {
+			@apply text-xs font-thin ml-1;
+		}
+
+		&:hover {
+			@apply bg-opacity-75;
+		}
 	}
 }

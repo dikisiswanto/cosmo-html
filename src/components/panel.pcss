@@ -1,8 +1,28 @@
 .panel {
-	@apply rounded shadow my-3 bg-white;
+	@apply rounded shadow bg-white overflow-hidden;
+
+	&--sidebar {
+		
+		.panel__header {
+			@apply text-primary pt-3 pb-2 px-4;
+		}
+
+		.panel__heading {
+			@apply text-xl uppercase font-bold;
+		}
+
+		.panel__body {
+			@apply p-4
+		}
+	}
+
+	& + & {
+		@apply mt-4;
+	}
 
 	&__header {
 		@apply p-3 border-b border-gray-300;
+
 	}
 
 	&__heading {

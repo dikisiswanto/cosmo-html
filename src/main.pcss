@@ -11,6 +11,8 @@
 @import './components/pagination.pcss';
 @import './components/progress-bar.pcss';
 @import './components/panel.pcss';
+@import './components/form.pcss';
+@import './components/button.pcss';
 @import './components/slider.pcss';
 @import './components/content.pcss';
 @import './components/sidebar.pcss';
@@ -21,7 +23,11 @@ body {
 }
 
 .main-wrapper {
-	@apply flex justify-between max-w-container mx-auto mt-4;
+	@apply flex flex-col justify-between max-w-container mx-auto mt-4;
+
+	@screen lg {
+		@apply flex-row;
+	}
 }
 
 ::-moz-selection {

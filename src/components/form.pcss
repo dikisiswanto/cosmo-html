@@ -1,0 +1,23 @@
+.form {
+	&--sidebar {
+		@apply relative mb-4;
+
+		.form__input {
+			@apply shadow pr-8 flex items-center;
+		}
+
+		.form__icon {
+			top: calc(theme('spacing.5') / 2);
+			right: calc(theme('spacing.4') / 2);
+			@apply absolute text-gray-500;
+		}
+	}
+
+	&__input {
+		@apply w-full px-3 h-10 mb-2 rounded transition-all duration-200 border border-transparent;
+
+		&:focus {
+			@apply border-primary outline-none;
+		}
+	}
+}
