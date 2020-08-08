@@ -877,6 +877,23 @@
 					</div>
 				</div>
 			</div>
+			<div class="sidebar__item">
+				<!-- widget Layanan Mandiri -->
+				<div class="box box-primary box-solid">
+					<div class="box-header">
+						<h3 class="box-title"><i class="fa fa-user"></i> Layanan Mandiri</h3><br>
+		Silakan datang atau hubungi operator desa untuk mendapatkan kode PIN anda.
+		</div>
+					<div class="box-body">
+						<h4>Masukan NIK dan PIN</h4>
+						<form action="http://opensid.test/index.php/first/auth" method="post">
+							<input name="nik" type="text" placeholder="NIK" style="margin-left:0px" value="" required="">
+							<input name="pin" type="password" placeholder="PIN" style="margin-left:0px" value="" required="">
+							<button type="submit" id="but" style="margin-left:0px">Masuk</button>
+							<input type="hidden" name="sidcsrf" value="ef0ec7165559a63f6ad7e2d6a3039053"></form>
+					</div>
+				</div>
+			</div>
 		</aside>
 	</section>
 	<section class="container --flex --justify-between --mt-4 --flex-lg-only">
@@ -1041,7 +1058,7 @@
 					<a href="#" class="social-media__link"><i class="fa fa-instagram"></i></a>
 				</li>
 				<li class="social-media__item social-media--telegram">
-					<a href="#" class="social-media__link"><i class="fa fa-send"></i></a>
+					<a href="#" class="social-media__link"><i class="fa fa-telegram"></i></a>
 				</li>
 				<li class="social-media__item social-media--whatsapp">
 					<a href="#" class="social-media__link"><i class="fa fa-whatsapp"></i></a>
