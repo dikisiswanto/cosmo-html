@@ -1,11 +1,27 @@
 .header {
-	@apply sticky z-50 shadow-md bg-white transition-all duration-500;
+	@apply bg-white sticky z-50 transition-all duration-500;
+
+	@screen lg {
+		@apply shadow-md;
+	}
+
+	&__group {
+		@apply flex justify-between flex-col items-center;
+
+		@screen lg {
+			@apply justify-start flex-row;
+		}
+	}
 
 	&--sticky {
 		@apply top-0;
 
+		.header__group {
+			@apply flex-row;
+		}
+
 		.header-brand {
-			@apply flex-row items-center justify-start text-left py-2 px-3;
+			@apply flex-row items-center justify-start text-left py-2 px-3 w-full;
 
 			@screen lg {
 				@apply pl-0;
@@ -16,7 +32,7 @@
 			}
 
 			&__title {
-				@apply pt-1 text-base font-semibold text-primary;
+				@apply pt-0 text-base font-semibold text-primary;
 
 				@screen md {
 					@apply text-lg;
@@ -28,7 +44,17 @@
 			}
 		}
 
+		.button--menu {
+			@apply py-1 px-2;
+
+			span {
+				@apply hidden;
+			}
+		}
+
 		.nav {
+			@apply mx-0;
+
 			&__list {
 				@apply justify-start;
 			}

@@ -11,7 +11,7 @@
 		}
 
 		&-title {
-			@apply  text-primary text-base capitalize font-semibold font-heading;
+			@apply text-primary text-base capitalize font-semibold font-heading;
 
 			@screen md {
 				@apply text-lg;
@@ -28,119 +28,129 @@
 
 		&-body {
 			@apply px-4 py-5;
-	
+
 			&>a {
 				@apply pr-1 inline-block;
 			}
-	
+
 			/* For categories */
 			ul {
 				@apply w-full flex-col pl-4 list-disc;
-	
+
 				li {
 					@apply py-1 px-1;
 				}
 			}
-	
+
 			/* For linking program */
 			&#sinergi_program {
 				table {
 					@apply table-fixed;
 				}
-	
+
 				td {
 					@apply flex h-auto;
-	
+
 					span {
 						@apply w-1/3 my-1 mx-1 block;
-	
+
 						img {
 							@apply w-full h-auto object-cover;
 						}
 					}
-	
+
 				}
 			}
-	
+
 			/* For Gallery */
 			#li-komentar {
 				@apply flex flex-row flex-wrap pl-0;
-	
+
 				a {
 					@apply w-1/3;
-	
+
 					img {
 						@apply w-full px-1;
 					}
 				}
 			}
 		}
-	
+
 		/* For Aparatur Desa */
 		#aparatur_desa {
 			img {
+				z-index: 30 !important;
 				@apply absolute w-full h-auto;
 			}
+
+			.cycle-caption {
+				z-index: 40 !important;
+			}
+
+			.cycle-overlay {
+				z-index: 35 !important;
+			}
 		}
-	
+
 		/* For tabs */
 		.nav.nav-tabs {
 			@apply flex flex-row list-none m-0 p-0 border-b-2 bg-white;
-	
+
 			li {
 				@apply block;
-	
+
 				&.active {
 					margin-bottom: -2px;
 					@apply border-t border-l border-r rounded-t bg-white;
 				}
-	
+
 				a {
 					color: theme('colors.primary') !important;
 					@apply px-3 py-1 block;
 				}
 			}
 		}
-	
+
 		.tab-content {
 			@apply py-5;
-	
+
 			.tab-pane {
 				@apply hidden;
-	
+
 				&.active.show {
 					@apply block;
 				}
 			}
 		}
-	
+
 		.btn.btn-block {
 			@apply w-full block py-2 px-3 rounded my-2 bg-primary text-white;
 		}
-	
+
 		.panel-collapse {
 			@apply block;
-	
+
 			&.collapse {
 				@apply hidden;
 			}
-	
+
 			table {
 				@apply border-collapse w-full;
+
 				tr {
 					@apply flex;
 				}
-	
+
 				td {
 					@apply break-words border border-gray-200 py-1 px-1 h-auto;
 				}
 			}
 		}
-	
+
 		/* for visitor counter */
 		table.counter {
 			@apply w-full;
-	
+
 			tr td:nth-child(2) {
 				@apply flex justify-end items-center;
 			}
@@ -166,5 +176,10 @@
 				@apply bg-opacity-75;
 			}
 		}
+	}
+
+	#map_wilayah,
+	#map_canvas {
+		z-index: 30 !important;
 	}
 }

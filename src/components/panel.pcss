@@ -2,13 +2,14 @@
 	@apply rounded shadow bg-white overflow-hidden;
 
 	&--sidebar {
+		@apply w-full rounded shadow bg-white overflow-hidden;
 
 		.panel__header {
-			@apply text-primary pt-3 pb-2 px-4;
+			@apply text-sm text-gray-600 pt-3 pb-2 px-4 border-b border-gray-300;
 		}
 
-		.panel__heading {
-			@apply text-base capitalize font-bold;
+		.panel__title {
+			@apply text-primary text-base capitalize font-semibold font-heading;
 
 			@screen md {
 				@apply text-lg;
@@ -17,10 +18,14 @@
 			@screen lg {
 				@apply text-xl;
 			}
+
+			.fa {
+				@apply mr-2;
+			}
 		}
 
 		.panel__body {
-			@apply p-4
+			@apply px-4 py-5;
 		}
 	}
 

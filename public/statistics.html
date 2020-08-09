@@ -8,18 +8,21 @@
 	<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
 <body>
 	<header class="header">
-		<a href="./index.html" class="header-brand">
-			<img src="./assets/images/logo_lutra.png" alt="" srcset="" class="header-brand__logo">
-			<div class="header-brand__group">
-				<h1 class="header-brand__title">Sistem Informasi Desa Sukaraya</h1>
-				<span class="header-brand__subtitle">Kec. Bone-Bone, Kab. Luwu Utara, Prov. Sulawesi Selatan</span>
-			</div>
-		</a>
+		<div class="header__group">
+			<a href="./index.html" class="header-brand">
+				<img src="./assets/images/logo_lutra.png" alt="" srcset="" class="header-brand__logo">
+				<div class="header-brand__group">
+					<h1 class="header-brand__title">Sistem Informasi Desa Sukaraya</h1>
+					<span class="header-brand__subtitle">Kec. Bone-Bone, Kab. Luwu Utara, Prov. Sulawesi Selatan</span>
+				</div>
+			</a>
+			<button class="button button--menu"><i class="fa fa-list"></i> <span>MENU</span></button>
+		</div>
 		<nav class="nav">
 			<ul class="nav__list">
 				<li class="nav__item nav__item--active">
@@ -70,8 +73,8 @@
 				<div class="--flex --items-center --justify-between --mt-2 --mb-4">
 					<h3 class="content__title">Grafik Rentang Umur</h3>
 					<div class="content__group">
-						<button class="button button--primary" data-type="column">Bar Graph</button>
-						<button class="button button--primary button--swicth-active" data-type="pie">Pie Graph</button>
+						<button class="button button--primary button__switch" data-type="column">Bar Graph</button>
+						<button class="button button--primary button__switch--active" data-type="pie">Pie Graph</button>
 					</div>
 				</div>
 				<div id="statistics-graph" data-highcharts-chart="0" style="overflow: hidden;">

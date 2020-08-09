@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
 const nunjucks = require('gulp-nunjucks-render');
-const purgecss = require('gulp-purgecss');
 const prettyHtml = require('gulp-pretty-html');
 const prettyCss = require('gulp-clean-css');
 const prettyJs = require('gulp-minify');
@@ -14,9 +13,6 @@ gulp.task('css', () => {
 		.pipe(postcss())
 		.pipe(concat('style.css'))
 		.pipe(gulp.dest('./public/assets/css'))
-		.pipe(purgecss({
-			content: ['public/*.html']
-		}))
 		.pipe(prettyCss())
 		.pipe(concat('style.min.css'))
 		.pipe(gulp.dest('./public/assets/css/'));

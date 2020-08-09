@@ -5,7 +5,22 @@
 		@apply bg-primary text-white;
 	}
 
-	&--swicth-active {
-		@apply text-gray-600 bg-white;
+	&__switch {
+		&--active {
+			@apply text-gray-600 bg-white;
+		}
+	}
+
+	&--menu {
+		@apply shadow-none mt-2 mb-1 border mx-4 text-center border-primary text-primary;
+
+		@screen lg {
+			@apply hidden my-0;
+		}
+	}
+
+	&:active,
+	&:focus {
+		@apply outline-none;
 	}
 }
