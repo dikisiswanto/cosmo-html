@@ -158,7 +158,11 @@
 
 		/* For self service */
 		input {
-			@apply h-10 w-full rounded shadow-sm border border-gray-300 px-2 my-1 transition-all duration-200;
+			
+			&[type=text], &[type=password] {
+				@apply h-10 w-full rounded shadow-sm border border-gray-300 px-2 my-1 transition-all duration-200;
+
+			}
 
 			&:first-child {
 				@apply mt-3;

@@ -178,12 +178,15 @@ $(document).ready(function () {
     arrows: false,
     focusOnSelect: true
   });
-  $('.newsticker__list').marquee({
-    duration: 5000,
-    gap: 50,
-    pauseOnHover: true,
-    speed: 150
-  });
+
+  if ($('.newsticker')) {
+    $('.newsticker__list').marquee({
+      gap: 50,
+      pauseOnHover: true,
+      speed: 150
+    });
+  }
+
   var activeElem = $('.nav-tabs>li:first-child').find('a').attr('href');
   $('.nav-tabs>li:first-child').find('a').addClass('active show');
   $('#arsip_artikel .tab-content div:first-child').addClass('active show');

@@ -45,8 +45,12 @@
 	}
 
 	&__link {
-		@apply inline-block py-3 px-4 transition-all duration-300;
+		@apply block py-3 px-4 transition-all duration-300;
 
+		@screen lg {
+			@apply inline-block;
+		}
+		
 		.fa {
 			@apply transition-all duration-200;
 		}
@@ -54,6 +58,7 @@
 		&:hover {
 			@apply bg-secondary;
 		}
+
 	}
 
 	&__icon {
