@@ -1,9 +1,29 @@
-{% set title = 'Nunjucks + Tailwind Starter Page' -%}
+{% set title = 'Home page' -%}
 {% extends "templates/master.html" -%}
 
 {% block content -%}
-  <section class="container max-w-[1024px] mx-auto px-5 flex min-h-screen flex-col justify-center text-center gap-2">
-    <h1 class="font-bold text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-500 leading-snug">Tailwindcss <span class="text-3xl">x</span> Nunjucks</h1>
-    <p>You can start editing the page by modifying <code class="bg-gray-200 py-1 px-2 rounded">src/html/pages/index.html</code> or add new pages on the folder</p>
+  <section class="container max-w-[1200px] mx-auto">
+    <div class="w-full h-[400px] bg-gray-300 flex items-center justify-center relative">
+      <p>Slider Area</p>
+      <button class="absolute top-1/2 left-0 mx-3 bg-white h-10 w-10 rounded-full inline-flex items-center justify-center"><i class="fa fa-chevron-left"></i></button>
+      <button class="absolute top-1/2 right-0 mx-3 bg-white h-10 w-10 rounded-full inline-flex items-center justify-center"><i class="fa fa-chevron-right"></i></button>
+    </div>
+
+    <section class="space-y-5 mt-5 px-3 lg:px-0">
+      <h2 class="text-2xl font-bold border-l-4 border-secondary px-3">Artikel Terkini</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        {% for i in range(0, 6) %}
+          <div class="w-full h-[300px] bg-gray-300"></div>
+        {% endfor %}
+      </div>
+      <section class="space-y-2">
+        <p class="text-sm">Halaman 1 dari 4</p>
+        <ul class="w-auto space-x-1">
+          {% for i in range(1, 5) %}
+            <li class="inline-block py-1 px-2 rounded {{ "bg-secondary text-white px-3" if i == 1 }}">{{ i }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </section>
   </section>
 {%- endblock %}

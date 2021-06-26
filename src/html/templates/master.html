@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <title>{{ title }}</title>
-  {% block meta %}
-    {% include "templates/meta.html" %}
-  {% endblock %}
+  {% block meta -%}
+    {% include "templates/meta.html" -%}
+  {%- endblock %}
   {% block style -%}
+    {% include "partials/css-vendor.html" -%}
     <link rel="stylesheet" href="./assets/css/style.min.css">
   {%- endblock %}
 </head>
-<body>
+<body class="font-main text-gray-600 bg-gray-100">
   {% block body -%}
     {% block header -%}
       {% include "partials/header.html" -%}
@@ -20,6 +21,7 @@
     {%- endblock %}
   {%- endblock %}
   {% block scripts -%}
+    {% include "partials/js-vendor.html" -%}
     <script src="./assets/js/script.min.js"></script>
   {%- endblock %}
 </body>

@@ -1,12 +1,16 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.html'],
+  purge: ['./build/*.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        primary: '#40407e',
+        secondary: '#d94148',
+        tertiary: '#38a1f3',
+      },
       fontFamily: {
-        heading: ['sans-serif'],
-        body: ['sans-serif'],
+        main: ['DM Sans', 'sans-serif'],
       },
     },
   },
