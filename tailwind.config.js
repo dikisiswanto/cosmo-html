@@ -1,21 +1,17 @@
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: ['./src/**/*.html'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {
-        primary: '#2E86AB',
-        secondary: '#F18F01',
-        tertiary: '#68618F'
+      fontFamily: {
+        heading: ['sans-serif'],
+        body: ['sans-serif'],
       },
-      maxWidth: {
-        container: '1200px'
-      }
     },
-    fontFamily: {
-      primary: ['Hind', 'sans-serif'],
-      heading: ['Roboto Slab', 'serif']
-    }
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
-}
+};
