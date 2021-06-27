@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
   {%- endblock %}
 </head>
-<body class="font-main text-gray-600 bg-gray-100">
+<body class="font-main text-gray-600 bg-gray-100"
+  x-data="{ openMore: false, openMenu: false }"
+  :class="openMenu ? 'overflow-hidden': ''">
   {% block body -%}
     {% block header -%}
       {% include "partials/header.html" -%}

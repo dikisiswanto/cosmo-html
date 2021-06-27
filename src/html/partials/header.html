@@ -1,18 +1,36 @@
 <header>
   <div class="bg-primary text-white text-sm py-1">
     <div class="max-w-[1200px] mx-auto flex items-center">
-      <span class="px-2 lg:px-5 py-1 font-medium bg-secondary inline-block flex-shrink-0" x-data="{now: new Date().toLocaleDateString()}" x-text="now">Today</span>
-      <marquee behavior="" direction="left" class="my-0 mx-0 leading-tight inline-block">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est sunt repellat tenetur nobis animi eos corporis! Voluptatem quis, incidunt saepe veniam rerum nihil laudantium, tenetur velit a alias expedita ipsa.
+      <span class="px-2 lg:px-5 py-1 font-medium bg-secondary inline-block flex-shrink-0" x-data="{now: new Date().toLocaleDateString('id-ID')}" x-text="now">Today</span>
+      <marquee behavior="" direction="left" class="my-0 mx-0 leading-tight inline-block divide-x-4 divide-white">
+        <span class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </span>
+        <span class="px-3">Est sunt repellat tenetur nobis animi eos corporis!</span>
+        <span class="px-3">quasi praesentium animi ipsam corrupti maiores voluptatibus ratione omnis sit, cumque nesciunt commodi aperiam eligendi tenetur.</span>
       </marquee>
     </div>
   </div>
   <div class="bg-pattern border-b border-gray-100 bg-white">
-    <div class="max-w-[1200px] mx-auto flex justify-center items-center py-3">
-      <a href="" class="block space-y-1">
+    <div class="max-w-[1200px] mx-auto flex flex-col space-y-5 lg:space-y-0  lg:flex-row justify-center lg:justify-between items-center py-3">
+      <div class="lg:w-1/3 hidden lg:block">
+        <ul class="text-sm divide-y divide-gray-200 max-w-[75%]">
+          <li class="py-1">
+            <i class="fa fa-envelope mr-1 text-secondary"></i>
+            humas@sukaraya.desa.id
+          </li>
+          <li class="py-1">
+            <i class="fa fa-phone-alt mr-1 text-secondary"></i>
+            +6281242566788
+          </li>
+        </ul>
+      </div>
+      <a href="" class="block space-y-1 lg:w-1/3 mx-auto text-center">
         <img src="./assets/img/luwu-utara.png" alt="" class="h-16 w-auto mx-auto">
         <h1 class="text-lg lg:text-xl font-bold text-primary">Sistem Informasi Desa Sukaraya</h1>
       </a>
+      <form action="#" class="relative lg:w-1/3 lg:text-right">
+        <input type="text" name="q" autocomplete="off" id="search" class="border w-64 py-2 px-3 shadow transition focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Cari sesuatu..." aria-label="Search something...">
+        <i class="fa fa-search absolute top-0 right-[10px] transform  mt-1 translate-y-1/2 text-gray-500"></i>
+      </form>
     </div>     
   </div>
 </header>

@@ -56,24 +56,30 @@
     submenu: []
   }
 ] -%}
-<nav class="shadow sticky top-0 z-10 transition" id="top-nav"
+<nav class="shadow sticky top-[-1px] z-10" id="top-nav"
   x-data="{ navReach: false }"
   @scroll.window="navReach = (window.pageYOffset > document.querySelector('#top-nav').getBoundingClientRect().top + 150)"
   :class="navReach ? 'bg-primary text-white' : 'bg-white'">
 
-  <div class="max-w-[1200px] mx-auto flex justify-between relative" x-data="{ openMore: false, openMenu: false }">
+  <div class="max-w-[1200px] mx-auto flex justify-between relative">
     <button class="h-[inherit] inline-block lg:hidden py-3 px-4" @click="openMenu = !openMenu" aria-label="open menu">
       <i class="fa fa-lg" :class="!openMenu ? 'fa-bars' : 'fa-times'"></i>
     </button>
 
-    <div class="lg:block fixed lg:relative lg:translate-y-0 w-full top-0 left-0 h-screen lg:h-auto z-50 transform px-2 lg:px-0 py-4 lg:py-0 -translate-y-full"
+    <div class="lg:block fixed lg:relative lg:translate-y-0 w-full top-0 left-0 h-screen lg:h-auto z-50 transition transform px-2 lg:px-0 py-4 lg:py-0 -translate-y-full overflow-y-auto lg:overflow-visible"
       :class="openMenu ? 'translate-y-0 bg-white text-gray-700 lg:bg-transparent' : ''">
+
+      <div class="lg:hidden mb-4 border-b py-1 flex flex-col items-center space-y-1">
+        <img src="./assets/img/luwu-utara.png" alt="logo" class="w-10">
+        <span class="font-bold text-lg">Desa Sukaraya</span>
+      </div>
+
       <ul class="w-full divide-y divide-gray-200 lg:divide-y-0">
         {% for menu in menus -%}
           <li class="lg:inline-block relative group">
             <a href="" class="block lg:inline-block py-3 px-2 font-medium border-b-2 border-transparent transition duration-200 hover:text-secondary hover:border-secondary">{{ menu.name }} {% if menu.hasChildren %}<i class="fa fa-chevron-down fa-sm ml-1"></i>{% endif %}</a>
             {% if menu.hasChildren %}
-              <ul class="absolute top-full left-[-100vw] w-[250px] bg-white text-gray-700 shadow divide-y divide-gray-200 opacity-0 z-[-1] group-hover:left-0 group-hover:z-10 group-hover:opacity-100 transition delay-100 duration-300">
+              <ul class="lg:absolute top-full left-[-100vw] w-full lg:w-[250px] bg-white text-gray-700 lg:shadow divide-y divide-gray-200 opacity-100 lg:opacity-0 z-[-1] group-hover:left-0 group-hover:z-10 group-hover:opacity-100 transition delay-100 duration-300">
                 {% for menu in menu.submenu %}
                   <li>
                     <a href="#" class="block py-2 px-5 hover:text-secondary font-medium">{{ menu }}</a>
@@ -84,16 +90,19 @@
           </li>
         {%- endfor %}
       </ul>
+      <button class="lg:hidden fixed top-0 mt-3 left-0 px-3 text-secondary" aria-label="close menu" @click="openMenu = false">
+        <i class="fa fa-times-circle fa-lg text-4xl"></i>
+      </button>
     </div>
 
-    <button class="h-[inherit] font-medium px-5 align-middle inline-flex items-center bg-secondary text-white border-0" @click="openMore = !openMore"><i class="fa fa-ellipsis-v"></i></button>
+    <button class="h-[inherit] font-medium px-5 align-middle inline-flex items-center bg-secondary text-white border-0" @click="openMore = !openMore" aria-label="more menu"><i class="fa fa-ellipsis-v"></i></button>
     <div class="absolute right-0 top-full bg-white shadow-lg w-64 mt-px z-20" x-show="openMore"  @click.outside="openMore = false">
       <ul class="divide-y divide-gray-200">
         <li>
-          <a href="#" class="inline-block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-check mr-1 fa-sm"></i> Layanan Mandiri</a>
+          <a href="#" class="block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-check mr-1 fa-sm"></i> Layanan Mandiri</a>
         </li>
         <li>
-          <a href="#" class="inline-block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-sign-in-alt fa-sm mr-1"></i> Login Admin</a>
+          <a href="#" class="block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-sign-in-alt fa-sm mr-1"></i> Login Admin</a>
         </li>
       </ul>
     </div>
