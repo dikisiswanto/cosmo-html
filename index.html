@@ -9,41 +9,66 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.1/swiper-bundle.min.css">
   <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
-<body class="font-main text-gray-600 bg-gray-100">
+<body class="font-main text-gray-600 bg-gray-100" x-data="{ openMore: false, openMenu: false }" :class="openMenu ? 'overflow-hidden': ''">
   <header>
     <div class="bg-primary text-white text-sm py-1">
       <div class="max-w-[1200px] mx-auto flex items-center">
-        <span class="px-2 lg:px-5 py-1 font-medium bg-secondary inline-block flex-shrink-0" x-data="{now: new Date().toLocaleDateString()}" x-text="now">Today</span>
-        <marquee behavior="" direction="left" class="my-0 mx-0 leading-tight inline-block">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est sunt repellat tenetur nobis animi eos corporis! Voluptatem quis, incidunt saepe veniam rerum nihil laudantium, tenetur velit a alias expedita ipsa.
+        <span class="px-2 lg:px-5 py-1 font-medium bg-secondary inline-block flex-shrink-0" x-data="{now: new Date().toLocaleDateString('id-ID')}" x-text="now">Today</span>
+        <marquee behavior="" direction="left" class="my-0 mx-0 leading-tight inline-block divide-x-4 divide-white">
+          <span class="px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. </span>
+          <span class="px-3">Est sunt repellat tenetur nobis animi eos corporis!</span>
+          <span class="px-3">quasi praesentium animi ipsam corrupti maiores voluptatibus ratione omnis sit, cumque nesciunt commodi aperiam eligendi tenetur.</span>
         </marquee>
       </div>
     </div>
     <div class="bg-pattern border-b border-gray-100 bg-white">
-      <div class="max-w-[1200px] mx-auto flex justify-center items-center py-3">
-        <a href="" class="block space-y-1">
+      <div class="max-w-[1200px] mx-auto flex flex-col space-y-5 lg:space-y-0  lg:flex-row justify-center lg:justify-between items-center py-3">
+        <div class="lg:w-1/3 hidden lg:block">
+          <ul class="text-sm divide-y divide-gray-200 max-w-[75%]">
+            <li class="py-1">
+              <i class="fa fa-envelope mr-1 text-secondary"></i>
+              humas@sukaraya.desa.id
+            </li>
+            <li class="py-1">
+              <i class="fa fa-phone-alt mr-1 text-secondary"></i>
+              +6281242566788
+            </li>
+          </ul>
+        </div>
+        <a href="" class="block space-y-1 lg:w-1/3 mx-auto text-center">
           <img src="./assets/img/luwu-utara.png" alt="" class="h-16 w-auto mx-auto">
           <h1 class="text-lg lg:text-xl font-bold text-primary">Sistem Informasi Desa Sukaraya</h1>
         </a>
+        <form action="#" class="relative lg:w-1/3 lg:text-right">
+          <input type="text" name="q" autocomplete="off" id="search" class="border w-64 py-2 px-3 shadow transition focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Cari sesuatu..." aria-label="Search something...">
+          <i class="fa fa-search absolute top-0 right-[10px] transform  mt-1 translate-y-1/2 text-gray-500"></i>
+        </form>
       </div>
     </div>
   </header>
-  <nav class="shadow sticky top-0 z-10 transition" id="top-nav" x-data="{ navReach: false }" @scroll.window="navReach = (window.pageYOffset > document.querySelector('#top-nav').getBoundingClientRect().top + 150)" :class="navReach ? 'bg-primary text-white' : 'bg-white'">
+  <nav class="shadow sticky top-[-1px] z-10" id="top-nav" x-data="{ navReach: false }" @scroll.window="navReach = (window.pageYOffset > document.querySelector('#top-nav').getBoundingClientRect().top + 150)" :class="navReach ? 'bg-primary text-white' : 'bg-white'">
 
-    <div class="max-w-[1200px] mx-auto flex justify-between relative" x-data="{ openMore: false, openMenu: false }">
+    <div class="max-w-[1200px] mx-auto flex justify-between relative">
       <button class="h-[inherit] inline-block lg:hidden py-3 px-4" @click="openMenu = !openMenu" aria-label="open menu">
         <i class="fa fa-lg" :class="!openMenu ? 'fa-bars' : 'fa-times'"></i>
       </button>
 
-      <div class="lg:block fixed lg:relative lg:translate-y-0 w-full top-0 left-0 h-screen lg:h-auto z-50 transform px-2 lg:px-0 py-4 lg:py-0 -translate-y-full" :class="openMenu ? 'translate-y-0 bg-white text-gray-700 lg:bg-transparent' : ''">
+      <div class="lg:block fixed lg:relative lg:translate-y-0 w-full top-0 left-0 h-screen lg:h-auto z-50 transition transform px-2 lg:px-0 py-4 lg:py-0 -translate-y-full overflow-y-auto lg:overflow-visible" :class="openMenu ? 'translate-y-0 bg-white text-gray-700 lg:bg-transparent' : ''">
+
+        <div class="lg:hidden mb-4 border-b py-1 flex flex-col items-center space-y-1">
+          <img src="./assets/img/luwu-utara.png" alt="logo" class="w-10">
+          <span class="font-bold text-lg">Desa Sukaraya</span>
+        </div>
+
         <ul class="w-full divide-y divide-gray-200 lg:divide-y-0">
           <li class="lg:inline-block relative group">
             <a href="" class="block lg:inline-block py-3 px-2 font-medium border-b-2 border-transparent transition duration-200 hover:text-secondary hover:border-secondary">Profil <i class="fa fa-chevron-down fa-sm ml-1"></i></a>
 
-            <ul class="absolute top-full left-[-100vw] w-[250px] bg-white text-gray-700 shadow divide-y divide-gray-200 opacity-0 z-[-1] group-hover:left-0 group-hover:z-10 group-hover:opacity-100 transition delay-100 duration-300">
+            <ul class="lg:absolute top-full left-[-100vw] w-full lg:w-[250px] bg-white text-gray-700 lg:shadow divide-y divide-gray-200 opacity-100 lg:opacity-0 z-[-1] group-hover:left-0 group-hover:z-10 group-hover:opacity-100 transition delay-100 duration-300">
 
               <li>
                 <a href="#" class="block py-2 px-5 hover:text-secondary font-medium">Visi Misi</a>
@@ -67,7 +92,7 @@
           <li class="lg:inline-block relative group">
             <a href="" class="block lg:inline-block py-3 px-2 font-medium border-b-2 border-transparent transition duration-200 hover:text-secondary hover:border-secondary">Data Desa <i class="fa fa-chevron-down fa-sm ml-1"></i></a>
 
-            <ul class="absolute top-full left-[-100vw] w-[250px] bg-white text-gray-700 shadow divide-y divide-gray-200 opacity-0 z-[-1] group-hover:left-0 group-hover:z-10 group-hover:opacity-100 transition delay-100 duration-300">
+            <ul class="lg:absolute top-full left-[-100vw] w-full lg:w-[250px] bg-white text-gray-700 lg:shadow divide-y divide-gray-200 opacity-100 lg:opacity-0 z-[-1] group-hover:left-0 group-hover:z-10 group-hover:opacity-100 transition delay-100 duration-300">
 
               <li>
                 <a href="#" class="block py-2 px-5 hover:text-secondary font-medium">Demografi</a>
@@ -105,43 +130,139 @@
 
           </li>
         </ul>
+        <button class="lg:hidden fixed top-0 mt-3 left-0 px-3 text-secondary" aria-label="close menu" @click="openMenu = false">
+          <i class="fa fa-times-circle fa-lg text-4xl"></i>
+        </button>
       </div>
 
-      <button class="h-[inherit] font-medium px-5 align-middle inline-flex items-center bg-secondary text-white border-0" @click="openMore = !openMore"><i class="fa fa-ellipsis-v"></i></button>
+      <button class="h-[inherit] font-medium px-5 align-middle inline-flex items-center bg-secondary text-white border-0" @click="openMore = !openMore" aria-label="more menu"><i class="fa fa-ellipsis-v"></i></button>
       <div class="absolute right-0 top-full bg-white shadow-lg w-64 mt-px z-20" x-show="openMore" @click.outside="openMore = false">
         <ul class="divide-y divide-gray-200">
           <li>
-            <a href="#" class="inline-block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-check mr-1 fa-sm"></i> Layanan Mandiri</a>
+            <a href="#" class="block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-check mr-1 fa-sm"></i> Layanan Mandiri</a>
           </li>
           <li>
-            <a href="#" class="inline-block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-sign-in-alt fa-sm mr-1"></i> Login Admin</a>
+            <a href="#" class="block py-3 px-5 font-medium text-gray-700 hover:text-secondary"><i class="fa fa-sign-in-alt fa-sm mr-1"></i> Login Admin</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <section class="container max-w-[1200px] mx-auto">
-    <div class="w-full h-[400px] bg-gray-300 flex items-center justify-center relative">
-      <p>Slider Area</p>
-      <button class="absolute top-1/2 left-0 mx-3 bg-white h-10 w-10 rounded-full inline-flex items-center justify-center"><i class="fa fa-chevron-left"></i></button>
-      <button class="absolute top-1/2 right-0 mx-3 bg-white h-10 w-10 rounded-full inline-flex items-center justify-center"><i class="fa fa-chevron-right"></i></button>
+    <div class="w-full h-[250px] lg:h-[420px] bg-gray-300 flex items-center justify-center relative swiper-container overflow-visible">
+      <div class="swiper-wrapper h-[inherit]">
+
+        <img src="https://preview.silirdev.com/desa/upload/galeri/sedang_8UYMsv_desa4.jpg" alt="Slider 1" class="swiper-slide h-[inherit] w-auto object-cover object-center">
+
+        <img src="https://preview.silirdev.com/desa/upload/galeri/sedang_OiUlp7_desa5.jpg" alt="Slider 2" class="swiper-slide h-[inherit] w-auto object-cover object-center">
+
+        <img src="https://preview.silirdev.com/desa/upload/galeri/sedang_zcuftR_Image-25.jpg" alt="Slider 3" class="swiper-slide h-[inherit] w-auto object-cover object-center">
+
+      </div>
+      <div class="swiper-pagination"></div>
+      <button class="absolute top-1/2 left-0 lg:-mx-2 bg-secondary text-white h-8 w-8 inline-flex items-center justify-center swiper-button prev-slide z-10"><i class="fa fa-chevron-left"></i></button>
+      <button class="absolute top-1/2 right-0 lg:-mx-2 bg-secondary text-white h-8 w-8 inline-flex items-center justify-center swiper-button next-slide z-10"><i class="fa fa-chevron-right"></i></button>
     </div>
 
     <section class="space-y-5 mt-5 px-3 lg:px-0">
       <h2 class="text-2xl font-bold border-l-4 border-secondary px-3">Artikel Terkini</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
 
-        <div class="w-full h-[300px] bg-gray-300"></div>
+        <div class="group shadow transition hover:shadow-lg">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://preview.silirdev.com/desa/upload/galeri/sedang_OiUlp7_desa5.jpg" alt="artikel 1" class="w-full h-full object-cover transition transform group-hover:scale-[1.1]">
+          </div>
+          <div class="px-4 py-3 space-y-2">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="fa fa-calendar-alt mr-1 text-secondary"></i> 14 Mar 2020</span>
+              <span><i class="fa fa-user mr-1 text-secondary"></i> Administrator</span>
+            </div>
+            <h3 class="text-lg text-primary leading-tight font-bold transition hover:text-secondary">
+              <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a>
+            </h3>
+            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat....</p>
+          </div>
+        </div>
 
-        <div class="w-full h-[300px] bg-gray-300"></div>
+        <div class="group shadow transition hover:shadow-lg">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://preview.silirdev.com/desa/upload/artikel/sedang_1591617019_bimtek.jpg" alt="artikel 2" class="w-full h-full object-cover transition transform group-hover:scale-[1.1]">
+          </div>
+          <div class="px-4 py-3 space-y-2">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="fa fa-calendar-alt mr-1 text-secondary"></i> 14 Mar 2020</span>
+              <span><i class="fa fa-user mr-1 text-secondary"></i> Administrator</span>
+            </div>
+            <h3 class="text-lg text-primary leading-tight font-bold transition hover:text-secondary">
+              <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a>
+            </h3>
+            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat....</p>
+          </div>
+        </div>
 
-        <div class="w-full h-[300px] bg-gray-300"></div>
+        <div class="group shadow transition hover:shadow-lg">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://preview.silirdev.com/desa/upload/galeri/sedang_8UYMsv_desa4.jpg" alt="artikel 3" class="w-full h-full object-cover transition transform group-hover:scale-[1.1]">
+          </div>
+          <div class="px-4 py-3 space-y-2">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="fa fa-calendar-alt mr-1 text-secondary"></i> 14 Mar 2020</span>
+              <span><i class="fa fa-user mr-1 text-secondary"></i> Administrator</span>
+            </div>
+            <h3 class="text-lg text-primary leading-tight font-bold transition hover:text-secondary">
+              <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a>
+            </h3>
+            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat....</p>
+          </div>
+        </div>
 
-        <div class="w-full h-[300px] bg-gray-300"></div>
+        <div class="group shadow transition hover:shadow-lg">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://preview.silirdev.com/desa/upload/artikel/sedang_1591617019_bimtek.jpg" alt="artikel 4" class="w-full h-full object-cover transition transform group-hover:scale-[1.1]">
+          </div>
+          <div class="px-4 py-3 space-y-2">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="fa fa-calendar-alt mr-1 text-secondary"></i> 14 Mar 2020</span>
+              <span><i class="fa fa-user mr-1 text-secondary"></i> Administrator</span>
+            </div>
+            <h3 class="text-lg text-primary leading-tight font-bold transition hover:text-secondary">
+              <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a>
+            </h3>
+            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat....</p>
+          </div>
+        </div>
 
-        <div class="w-full h-[300px] bg-gray-300"></div>
+        <div class="group shadow transition hover:shadow-lg">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://preview.silirdev.com/desa/upload/galeri/sedang_8UYMsv_desa4.jpg" alt="artikel 5" class="w-full h-full object-cover transition transform group-hover:scale-[1.1]">
+          </div>
+          <div class="px-4 py-3 space-y-2">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="fa fa-calendar-alt mr-1 text-secondary"></i> 14 Mar 2020</span>
+              <span><i class="fa fa-user mr-1 text-secondary"></i> Administrator</span>
+            </div>
+            <h3 class="text-lg text-primary leading-tight font-bold transition hover:text-secondary">
+              <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a>
+            </h3>
+            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat....</p>
+          </div>
+        </div>
 
-        <div class="w-full h-[300px] bg-gray-300"></div>
+        <div class="group shadow transition hover:shadow-lg">
+          <div class="h-48 bg-gray-300 overflow-hidden">
+            <img src="https://preview.silirdev.com/desa/upload/artikel/sedang_1591617019_bimtek.jpg" alt="artikel 6" class="w-full h-full object-cover transition transform group-hover:scale-[1.1]">
+          </div>
+          <div class="px-4 py-3 space-y-2">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span><i class="fa fa-calendar-alt mr-1 text-secondary"></i> 14 Mar 2020</span>
+              <span><i class="fa fa-user mr-1 text-secondary"></i> Administrator</span>
+            </div>
+            <h3 class="text-lg text-primary leading-tight font-bold transition hover:text-secondary">
+              <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit</a>
+            </h3>
+            <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat....</p>
+          </div>
+        </div>
 
       </div>
       <section class="space-y-2">
@@ -160,8 +281,18 @@
       </section>
     </section>
   </section>
-
+  <footer class="bg-gray-800 text-white mt-10">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-0 py-5 space-y-5">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quas? Officia minima illum, impedit nisi exercitationem itaque voluptatibus illo aliquam. Quam dolore fugit hic nobis autem? Praesentium a recusandae quo.
+    </div>
+    <div class="py-3 text-sm bg-gray-900" x-data="{ year: new Date().getFullYear() }">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-0">
+        Hak cipta &copy; <span x-text="year"></span> - Desa Sukaraya. Diberdayakan oleh OpenSID & Tema Cosmo.
+      </div>
+    </div>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.1.0/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.1/swiper-bundle.min.js"></script>
   <script src="./assets/js/script.min.js"></script>
 </body>
 
